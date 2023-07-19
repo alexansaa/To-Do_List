@@ -1,10 +1,10 @@
-import activities from './activities.js';
+import Activities from './activities.js';
 import './style.css';
 import render from './renderActivitie.js';
 
-activities.loadData();
+Activities.loadData();
 
-render(activities.activities);
+render(Activities.activities);
 
 const refreshBtn = document.querySelector('#refreshImg');
 const enterBtn = document.querySelector('#enterImg');
