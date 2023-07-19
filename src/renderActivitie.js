@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import activities from './activities.js';
 
-const activCtn = document.querySelector('#activitiesContainer');
+export const activCtn = document.querySelector('#activitiesContainer');
 
 export const renderFunction = (JsonObjectsArray) => {
   activCtn.innerHTML = '';
@@ -55,6 +55,4 @@ export const renderFunction = (JsonObjectsArray) => {
       renderFunction(activities.activities);
     });
   });
-
-  return;
 };
