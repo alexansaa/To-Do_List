@@ -8,6 +8,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
       import: './src/index.js',
       dependOn: 'shared',
     },
+    activities: {
+      import: './src/activities.js',
+    },
     shared: 'lodash',
    },
    devtool: 'inline-source-map',
@@ -16,7 +19,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Development',
       template: './src/index.html',
     }),
   ],
@@ -32,6 +34,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      }
     ],
   },
    optimization: {
