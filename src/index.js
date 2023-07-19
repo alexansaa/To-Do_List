@@ -1,10 +1,13 @@
 import Activities from './activities.js';
 import './style.css';
-import render from './renderActivitie.js';
+import { renderFunction } from './renderActivitie.js';
+import clik from './editItems.js';
 
 Activities.loadData();
 
-render(Activities.activities);
+renderFunction(Activities.activities);
+
+clik();
 
 const refreshBtn = document.querySelector('#refreshImg');
 const enterBtn = document.querySelector('#enterImg');
