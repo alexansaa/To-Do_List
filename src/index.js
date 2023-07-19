@@ -1,7 +1,6 @@
-import _ from 'lodash';
-import activities from './activities.js'
+import activities from './activities.js';
 import './style.css';
-import render from './renderActivitie.js'
+import render from './renderActivitie.js';
 
 activities.loadData();
 
@@ -12,10 +11,10 @@ const enterBtn = document.querySelector('#enterImg');
 refreshBtn.classList.add('refreshIcon');
 enterBtn.classList.add('enterIcon');
 
-const myContainerChilds = document.querySelector("#mainContainer").children;
-for(let i = 0; i < myContainerChilds.length ; i++){
+const myContainerChilds = document.querySelector('#mainContainer').children;
+for (let i = 0; i < myContainerChilds.length; i++) {
   myContainerChilds[i].classList.add('element');
-  if(i == myContainerChilds.length - 1) {
+  if(i === myContainerChilds.length - 1) {
     myContainerChilds[i].classList.add('fullShadow');
   } else {
     myContainerChilds[i].classList.add('rightShadow');

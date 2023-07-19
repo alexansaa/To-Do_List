@@ -1,4 +1,5 @@
-import activities from "./activities.js";
+import _ from 'lodash';
+import activities from './activities.js';
 
 const activCtn = document.querySelector('#activitiesContainer');
 
@@ -23,7 +24,7 @@ export default (JsonObjectsArray) => {
     const chkLabel = document.createElement('label');
     chkLabel.classList.add('w-100');
     chkLabel.classList.add('px-2');
-    chkLabel.id = 'lb' + act.index;
+    chkLabel.id = _.join(['lb', act.index], '');
     chkLabel.textContent = act.description;
     chkLabel.htmlFor = act.index;
     actElmnt.appendChild(chkLabel);
@@ -34,8 +35,8 @@ export default (JsonObjectsArray) => {
 
     activCtn.appendChild(actElmnt);
 
-    chkBx.addEventListener('change',(e) => {
-      const myLabel = document.querySelector('#'+'lb'+e.target.id);
+    chkBx.addEventListener('change', (e) => {
+      const myLabel = document.querySelector(_.join(['#', 'lb', e.target.id], ''));
       activities.updateActivitie(myLabel.textContent, e.target.checked, e.target.id);
     });
   });
