@@ -1,10 +1,15 @@
 import _ from 'lodash';
 import activities from './activities.js';
+import render from './renderActivitie.js';
+import { red } from 'color-name';
 
 const activCtn = document.querySelector('#activitiesContainer');
 
 export default (JsonObjectsArray) => {
   activCtn.innerHTML = '';
+  if (JsonObjectsArray === null || JsonObjectsArray.length === 0) {
+    return;
+  }
   JsonObjectsArray.forEach((act) => {
     const actElmnt = document.createElement('div');
     actElmnt.classList.add('px-3');
@@ -17,27 +22,39 @@ export default (JsonObjectsArray) => {
 
     const chkBx = document.createElement('input');
     chkBx.type = 'checkbox';
-    chkBx.id = act.index;
+    chkBx.id = _.join(['ck', act.index], '');
     chkBx.checked = act.completed;
     actElmnt.appendChild(chkBx);
 
-    const chkLabel = document.createElement('label');
+    const chkLabel = document.createElement('input');
+    chkLabel.value = act.description;
     chkLabel.classList.add('w-100');
     chkLabel.classList.add('px-2');
+    chkLabel.classList.add('border-0');
     chkLabel.id = _.join(['lb', act.index], '');
-    chkLabel.textContent = act.description;
     chkLabel.htmlFor = act.index;
     actElmnt.appendChild(chkLabel);
 
     const myImg = document.createElement('img');
     myImg.classList.add('verticalDots');
+    myImg.id = _.join(['dl', act.index], '');
     actElmnt.appendChild(myImg);
 
     activCtn.appendChild(actElmnt);
 
     chkBx.addEventListener('change', (e) => {
-      const myLabel = document.querySelector(_.join(['#', 'lb', e.target.id], ''));
-      activities.updateActivitie(myLabel.textContent, e.target.checked, e.target.id);
+      const myInput = document.querySelector(_.join(['#', 'lb', e.target.id.slice(-1)], ''));
+      activities.updateActivitie(myInput.value, e.target.checked, e.target.id.slice(-1));
+    });
+
+    chkLabel.addEventListener('change', (e) => {
+      const myCheck = document.querySelector(_.join(['#', 'ck', e.target.id.slice(-1)], ''));
+      activities.updateActivitie(e.target.value, myCheck.checked, e.target.id.slice(-1));
+    });
+
+    myImg.addEventListener('click', (e) => {
+      activities.removeActivite(e.target.id.slice(-1));
+      render(activities.activities);
     });
   });
 };
