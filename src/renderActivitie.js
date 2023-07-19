@@ -3,7 +3,7 @@ import activities from './activities.js';
 
 const activCtn = document.querySelector('#activitiesContainer');
 
-export default (JsonObjectsArray) => {
+export const renderFunction = (JsonObjectsArray) => {
   activCtn.innerHTML = '';
   if (JsonObjectsArray === null || JsonObjectsArray.length === 0) {
     return;
@@ -52,7 +52,9 @@ export default (JsonObjectsArray) => {
 
     myImg.addEventListener('click', (e) => {
       activities.removeActivite(e.target.id.slice(-1));
-      render(activities.activities);
+      renderFunction(activities.activities);
     });
   });
+
+  return;
 };
