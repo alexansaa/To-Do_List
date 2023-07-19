@@ -1,7 +1,7 @@
 export default class activities {
   static activities = [];
 
-  constructor(description,completed) {
+  constructor(description, completed) {
     const newIndex = activities.activities[activities.activities.length - 1].index;
     this.description = description;
     this.completed = completed;
@@ -10,30 +10,30 @@ export default class activities {
 
   static someActivities = [
     {
-      description: "some description",
+      description: 'some description',
       completed: false,
       index: 1,
     },
     {
-      description: "some other description",
+      description: 'some other description',
       completed: true,
       index: 2,
     },
     {
-      description: "a new description",
+      description: 'a new description',
       completed: true,
       index: 3,
     },
   ];
 
   static addNewActivitie(description,completed) {
-    const NewActivitie = new activities(description,completed);
+    const NewActivitie = new activities(description, completed);
     activities.activities.push(NewActivitie);
     activities.updateData();
   }
 
   static updateActivitie(description, completed, index) {
-    const targetObj = activities.activities.find((obj) => obj.index === parseInt(index));
+    const targetObj = activities.activities.find((obj) => obj.index === parseInt(index, 10));
     targetObj.description = description;
     targetObj.completed = completed;
     activities.updateData();
@@ -50,10 +50,9 @@ export default class activities {
 
   static loadData() {
     activities.activities = JSON.parse(localStorage.getItem('activities'));
-    if(activities.activities === null || activities.activities.length === 0) {
-      activities.activities  = activities.someActivities;
+    if (activities.activities === null || activities.activities.length === 0) {
+      activities.activities = activities.someActivities;
     }
     activities.updateData();
   }
 }
-
