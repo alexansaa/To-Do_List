@@ -12,6 +12,7 @@ export default (JsonObjectsArray) => {
     actElmnt.classList.add('border');
     actElmnt.classList.add('align-items-center');
     actElmnt.classList.add('justify-content-between');
+    actElmnt.draggable = true;
 
     const chkBx = document.createElement('input');
     chkBx.type = 'checkbox';
@@ -35,7 +36,6 @@ export default (JsonObjectsArray) => {
 
     chkBx.addEventListener('change',(e) => {
       const myLabel = document.querySelector('#'+'lb'+e.target.id);
-      console.log("estado" + e.target.id + ": " + e.target.checked);
       activities.updateActivitie(myLabel.textContent, e.target.checked, e.target.id);
     });
   });
