@@ -131,8 +131,6 @@ Deploy this project on any websever
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add Editable activities**
-- [ ] **Add Add & Remove functionality**
 - [ ] **Add Drag & Drop functionality**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
