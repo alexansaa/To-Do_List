@@ -29,7 +29,7 @@ export default class Activities {
   static addNewActivitie(description, completed) {
     const NewActivitie = new Activities(description, completed);
     Activities.activities.push(NewActivitie);
-    activities.updateData();
+    Activities.updateData();
   }
 
   static updateActivitie(description, completed, index) {
