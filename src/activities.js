@@ -32,9 +32,7 @@ export default class Activities {
   }
 
   static removeActivite(index) {
-    Activities.activities = Activities.activities.filter((item) => {
-      item.index !== parseInt(index, 10)
-    });
+    this.activities = this.activities.filter((item) => item.index !== parseInt(index, 10));
     Activities.reorder();
     Activities.updateData();
   }
