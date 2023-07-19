@@ -7,7 +7,7 @@ const deleteDoneBtn = document.querySelector('#deleteDone');
 
 export default () => {
   addBtn.addEventListener('click', () => {
-    if (actDesc.value !== '' || actDesc.value.length !== 0){
+    if (actDesc.value !== '' || actDesc.value.length !== 0) {
       Activities.addNewActivitie(actDesc.value, false);
       render(Activities.activities);
       actDesc.value = '';
@@ -18,4 +18,4 @@ export default () => {
     Activities.removeDone();
     render(Activities.activities);
   });
-}
+};

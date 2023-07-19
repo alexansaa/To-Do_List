@@ -1,7 +1,5 @@
 import _ from 'lodash';
 import activities from './activities.js';
-import render from './renderActivitie.js';
-import { red } from 'color-name';
 
 const activCtn = document.querySelector('#activitiesContainer');
 

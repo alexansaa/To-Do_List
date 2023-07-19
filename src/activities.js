@@ -3,7 +3,7 @@ export default class Activities {
 
   constructor(description, completed, index = null) {
     let newIndex = 0;
-    if (index === null){
+    if (index === null) {
       if (Activities.activities.length === 0) {
         newIndex = 1;
       } else {
@@ -12,7 +12,7 @@ export default class Activities {
     } else {
       newIndex = index;
     }
-    
+
     this.description = description;
     this.completed = completed;
     this.index = newIndex;
@@ -32,7 +32,7 @@ export default class Activities {
   }
 
   static removeActivite(index) {
-    Activities.activities = Activities.activities.filter((item) => item.index !== parseInt(index));
+    Activities.activities = Activities.activities.filter((item) => item.index !== parseInt(index, 10));
     Activities.reorder();
     Activities.updateData();
   }
@@ -44,7 +44,7 @@ export default class Activities {
   }
 
   static reorder() {
-    let tmpArr = [];
+    const tmpArr = [];
     let count = 0;
     Activities.activities.forEach((item) => {
       count += 1;
