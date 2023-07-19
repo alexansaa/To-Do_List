@@ -34,3 +34,10 @@ img {
     height: auto;
     width: 15px;
 }
+
+input[type=checkbox] + label {
+}
+
+input[type=checkbox]:checked + label {
+    text-decoration: line-through;
+}

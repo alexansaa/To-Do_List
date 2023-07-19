@@ -32,6 +32,13 @@ export default class activities {
     activities.updateData();
   }
 
+  static updateActivitie(description, completed, index) {
+    const targetObj = activities.activities.find((obj) => obj.index === parseInt(index));
+    targetObj.description = description;
+    targetObj.completed = completed;
+    activities.updateData();
+  }
+
   static removeActivite(index) {
     activities.activities = activities.activities.filter((item) => item.index !== index);
     activities.updateData();
@@ -46,6 +53,7 @@ export default class activities {
     if(activities.activities === null || activities.activities.length === 0) {
       activities.activities  = activities.someActivities;
     }
+    activities.updateData();
   }
 }
 

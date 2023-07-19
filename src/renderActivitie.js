@@ -13,28 +13,30 @@ export default (JsonObjectsArray) => {
     actElmnt.classList.add('align-items-center');
     actElmnt.classList.add('justify-content-between');
 
-    const chkBxCtn = document.createElement('div');
     const chkBx = document.createElement('input');
     chkBx.type = 'checkbox';
+    chkBx.id = act.index;
     chkBx.checked = act.completed;
-    chkBxCtn.appendChild(chkBx);
-    actElmnt.appendChild(chkBxCtn);
+    actElmnt.appendChild(chkBx);
 
-    const txtCtn = document.createElement('div');
-    txtCtn.classList.add('px-2');
-    txtCtn.classList.add('w-100');
-    txtCtn.textContent = act.description;
-    if(act.completed) {
-      txtCtn.classList.add('text-decoration-line-through');;
-    }
-    actElmnt.appendChild(txtCtn);
+    const chkLabel = document.createElement('label');
+    chkLabel.classList.add('w-100');
+    chkLabel.classList.add('px-2');
+    chkLabel.id = 'lb' + act.index;
+    chkLabel.textContent = act.description;
+    chkLabel.htmlFor = act.index;
+    actElmnt.appendChild(chkLabel);
 
-    const imgCtn = document.createElement('div');
     const myImg = document.createElement('img');
     myImg.classList.add('verticalDots');
-    imgCtn.appendChild(myImg);
-    actElmnt.appendChild(imgCtn);
+    actElmnt.appendChild(myImg);
 
     activCtn.appendChild(actElmnt);
+
+    chkBx.addEventListener('change',(e) => {
+      const myLabel = document.querySelector('#'+'lb'+e.target.id);
+      console.log("estado" + e.target.id + ": " + e.target.checked);
+      activities.updateActivitie(myLabel.textContent, e.target.checked, e.target.id);
+    });
   });
 };

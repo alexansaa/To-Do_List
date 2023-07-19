@@ -5,10 +5,7 @@ import render from './renderActivitie.js'
 
 activities.loadData();
 
-
 render(activities.activities);
-
-
 
 const refreshBtn = document.querySelector('#refreshImg');
 const enterBtn = document.querySelector('#enterImg');
