@@ -19,6 +19,7 @@ for (let i = 0; i < myContainerChilds.length; i += 1) {
   myContainerChilds[i].classList.add('element');
   if (i === myContainerChilds.length - 1) {
     myContainerChilds[i].classList.add('fullShadow');
+    myContainerChilds[i].classList.add('hover');
   } else {
     myContainerChilds[i].classList.add('rightShadow');
   }

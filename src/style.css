@@ -38,3 +38,8 @@ img {
 input[type=checkbox]:checked + input {
   text-decoration: line-through;
 }
+
+.hover:hover {
+  color: black;
+  text-decoration: underline;
+}
