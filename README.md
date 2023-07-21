@@ -74,7 +74,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo!](https://alexansaa.github.io/To-Do_List/dist)
+- [Live Demo!](https://alexansaa.github.io/To-Do_List)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
