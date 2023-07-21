@@ -4,7 +4,7 @@
   "description": "To-Do List project",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "server": "node server.js",
@@ -13,6 +13,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "homepage": "https://alexansaa.github.io/To-Do_List",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.8.1",
@@ -217,6 +218,7 @@
     "get-stdin": "^8.0.0",
     "get-stream": "^5.2.0",
     "get-symbol-description": "^1.0.0",
+    "gh-pages": "^5.0.0",
     "glob": "^10.3.3",
     "glob-parent": "^5.1.2",
     "global-dirs": "^3.0.1",
