@@ -4,6 +4,7 @@
   "description": "To-Do List project",
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
@@ -13,7 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://alexansaa.github.io/To-Do_List",
+  "homepage": "https://alexansaa.github.io/To-Do_List/",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.8.1",
