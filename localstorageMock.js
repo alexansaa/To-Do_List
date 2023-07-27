@@ -16,6 +16,6 @@ const localStorageMock = (() => {
 })();
 
 // Mock localStorage in the Activities class
-export const _init =  Object.defineProperty(global, 'localStorage', {
+export default Object.defineProperty(global, 'localStorage', {
   value: localStorageMock,
 });
