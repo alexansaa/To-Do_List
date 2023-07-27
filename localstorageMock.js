@@ -2,9 +2,7 @@
 const localStorageMock = (() => {
   let store = {};
   return {
-    getItem: (key) => {
-      store[key] || null;
-    },
+    getItem: (key) => store[key] || null,
     setItem: (key, value) => {
       store[key] = value.toString();
     },
@@ -18,6 +16,6 @@ const localStorageMock = (() => {
 })();
 
 // Mock localStorage in the Activities class
-export default Object.defineProperty(global, 'localStorage', {
+export const _init =  Object.defineProperty(global, 'localStorage', {
   value: localStorageMock,
 });
