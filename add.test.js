@@ -1,5 +1,6 @@
 import { describe, expect, test } from '@jest/globals';
 import Activities from './src/activities.js';
+// eslint-disable-next-line no-unused-vars
 import init from './localstorageMock.js';
 
 describe('Activities add functionality', () => {
