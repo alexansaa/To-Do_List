@@ -10,7 +10,7 @@
     "start": "webpack serve --open",
     "server": "node server.js",
     "build": "webpack",
-    "test": "jest --coverage"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
