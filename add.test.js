@@ -1,6 +1,8 @@
-import {describe, expect, test} from '@jest/globals';
+import { describe, expect, test } from '@jest/globals';
 import Activities from './src/activities';
-import { localstorageMock } from './localstorageMock.js';
+import { init } from './localstorageMock.js';
+
+init();
 
 describe('Activities add functionality', () => {
   // test constructor overload (description, complete)
