@@ -1,6 +1,8 @@
 import Activities from './src/activities.js';
+// eslint-disable-next-line no-unused-vars
 import init from './localstorageMock.js';
-describe("Activities", () => {
+
+describe('Activities', () => {
   test('Add 2 objects and remove 1 object of the array', () => {
     // Arrange
     Activities.addNewActivitie('Activity 1', true);
@@ -22,15 +24,13 @@ describe("Activities", () => {
     // Assert
     expect(Activities.activities.length).toBe(3);
     expect(Activities.activities[0].description).toBe('Activity 4');
-  }); 
+  });
 
   test('remove 1 object of the array', () => {
-   
     // Act
     Activities.removeActivite(1);
     // Assert
     expect(Activities.activities.length).toBe(2);
     expect(Activities.activities[0].description).toBe('Activity 5');
-
-  }); 
+  });
 });
