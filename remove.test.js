@@ -1,6 +1,26 @@
 import Activities from './src/activities.js';
-// eslint-disable-next-line no-unused-vars
-import init from './localstorageMock.js';
+
+// Creating a mock for localStorage
+const localStorageMock = (() => {
+    let store = {};
+    return {
+      getItem: (key) => store[key] || null,
+      setItem: (key, value) => {
+        store[key] = value.toString();
+      },
+      removeItem: (key) => {
+        delete store[key];
+      },
+      clear: () => {
+        store = {};
+      },
+    };
+  })();
+  
+  // Mock localStorage in the Activities class
+  Object.defineProperty(global, 'localStorage', {
+    value: localStorageMock,
+  });
 
 describe('Activities', () => {
   test('Add 2 objects and remove 1 object of the array', () => {
