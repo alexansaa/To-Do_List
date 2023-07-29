@@ -35,7 +35,7 @@ describe('Activities content update functionality', () => {
     // Arrange
     const act1Desc = 'Activity 1';
     const act1Comp = true;
-    Activities.addNewActivitie(act1Desc,act1Comp);
+    Activities.addNewActivitie(act1Desc, act1Comp);
     // Act
     expect(Activities.activities.length).toBe(1);
     expect(typeof Activities.activities[0]).toBe('object');
